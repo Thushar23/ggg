@@ -1,0 +1,55 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Wavy Text Animation</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        .wavy-text {
+            display: inline-block;
+            font-size: 3em;
+            font-weight: bold;
+            background: radial-gradient(75 deg,yellow, white);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        .wavy-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: yellow;
+            background: linear-gradient(75 deg,yellow, white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            opacity: 0.5;
+            animation: wave 1.5s infinite;
+        }
+        .wavy-text span {
+            display: inline-block;
+            animation: wave 2.5s infinite;
+        }
+        @keyframes wave {
+            0%, 70% { transform: translateY(0); }
+            25% { transform: translateY(-20px); }
+        }
+        .wavy-text span:nth-child(1) { animation-delay: 0.1s; }
+        .wavy-text span:nth-child(2) { animation-delay: 0.1s; }
+        .wavy-text span:nth-child(3) { animation-delay: 0.2s; }
+        .wavy-text span:nth-child(4) { animation-delay: 0.2s; }
+        .wavy-text span:nth-child(5) { animation-delay: 0.3s; }
+        .wavy-text span:nth-child(6) { animation-delay: 0.3s; }
+        .wavy-text span:nth-child(7) { animation-delay: 0.4s; }
+        .wavy-text span:nth-child(8) { animation-delay: 0.4s; }
+        .wavy-text span:nth-child(9) { animation-delay: 0.5s; }
+        .wavy-text span:nth-child(10) { animation-delay: 0.5s; }
+        .wavy-text span:nth-child(11) { animation-delay: 0.6s; }
+        .wavy-text span:nth-child(12) { animation-delay: 0.7s; }
+        /* Add more span:nth-child styles as needed */
+        .wavy-text { color:white;}
+    </style>
+    </head> <body> <div class="wavy-text"> <span>U</span><span>p</span><span>s</span><span>k</span><span>i</span><span>l</span><span>l</span> <span>M</span><span>a</span><span>f</span><span>i</span><span>a</span> </div> </body> </html>
